@@ -22,7 +22,7 @@
 | DELETE |	/users/{id} |	Exclui um usuario existente pelo ID, somente se o usuario estiver com saldo zerado |
 #
 
-## Funcções Forma de Pagamento
+## Funções Forma de Pagamento
 
 - [X] Comunicação com banco em tempo real (webhook)
 
@@ -50,3 +50,6 @@
 - [ ] Controlar Estoque de Produtos Cadastrados
 
 
+## Testes de Integração
+
+- [X] Teste de integração rotas de Usuarios
