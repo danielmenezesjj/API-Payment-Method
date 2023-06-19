@@ -1,9 +1,17 @@
 # Pix Payment Method API
 
 
-## Functions
+## Functions Users
 
-- [X] Cadastro de Usuarios
+- [X] Buscar Usuarios
+
+- [X] Buscar somente um Usuario
+
+- [X] Cadastrar Usuario
+
+- [X] Atualiza os dados de um Usuario
+
+- [X] Deleta um Usuario somente se o saldo do usuario estiver zerado.
 
 | Método HTTP	| Endpoint | Descrição |
 |--------|----------|----------|
@@ -12,6 +20,9 @@
 | POST |	/users |	Cadastra um novo usuario |
 | PUT |	/users/{id} |	Atualiza as informações de um usuario existente |
 | DELETE |	/users/{id} |	Exclui um usuario existente pelo ID, somente se o usuario estiver com saldo zerado |
+#
+
+## Functions COMUNICAÇÃO COM BANCO
 
 - [X] Comunicação com banco em tempo real (webhook)
 
@@ -22,6 +33,7 @@
 - [X] Gerar um Boleto de pagamento para adicionar creditos
 
 - [X] Atualiza os `CREDITOS` do Usuario ao o pagamento ser Efetuado via BOLETO.
+
 
 - [ ] Cadastro de Produtos
 
