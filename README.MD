@@ -1,7 +1,7 @@
 # Pix Payment Method API
 
 
-## Functions Users
+## Funções Usuarios
 
 - [X] Buscar Usuarios
 
@@ -22,7 +22,7 @@
 | DELETE |	/users/{id} |	Exclui um usuario existente pelo ID, somente se o usuario estiver com saldo zerado |
 #
 
-## Functions COMUNICAÇÃO COM BANCO
+## Funcções Forma de Pagamento
 
 - [X] Comunicação com banco em tempo real (webhook)
 
@@ -34,6 +34,12 @@
 
 - [X] Atualiza os `CREDITOS` do Usuario ao o pagamento ser Efetuado via BOLETO.
 
+| Método HTTP	| Endpoint | Descrição |
+|--------|----------|----------|
+| GET |	/pagamentos/pix |	Retorna todos os pix cadastrados |
+| GET |	/pagamentos/pix/{id} |	Retorna um pix específico pelo ID |
+| GET |	/pagamentos/boletos |	Retorna todos os boletos cadastrados |
+| GET |	/pagamentos/boletos/{id} |	Retorna um boleto específico pelo ID |
 
 - [ ] Cadastro de Produtos
 
