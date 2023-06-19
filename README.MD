@@ -2,6 +2,7 @@
 
 
 - [X] Cadastro de Usuarios
+
 | Método HTTP	| Endpoint | Descrição |
 |--------|----------|----------|
 | GET |	/users |	Retorna todos os produtos cadastrados |
