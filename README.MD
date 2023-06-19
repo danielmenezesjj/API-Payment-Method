@@ -41,6 +41,8 @@
 | GET |	/pagamentos/boletos |	Retorna todos os boletos cadastrados |
 | GET |	/pagamentos/boletos/{id} |	Retorna um boleto específico pelo ID |
 
+#
+
 - [ ] Cadastro de Produtos
 
 - [ ] Realizar compra de Produtos com creditos
