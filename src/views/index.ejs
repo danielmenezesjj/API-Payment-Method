@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exemplo de exibição de QR Code</title>
+  </head>
+  <body>
+    <% if (paymentId) { %>
+      <h1>QR Code de pagamento!</h1>
+
+      <img id="qrcode" alt="QR Code do pagamento" />
+      <script>
+        const imgElement = document.getElementById("qrcode");
+        const paymentId = "<%= paymentId %>";
+        console.log({ id: paymentId });
+       
+        fetch(`http://localhost:3001/verificarstatuspix/${paymentId}`)
+          .then((response) => response.json())
+          .then((data) => {
+            const qrCodeBase64 = data.qr_code_base64;
+            const qrCodeUrl = `data:image/png;base64, ${qrCodeBase64}`; 
+            imgElement.src = qrCodeUrl;
+            console.log(qrCodeUrl);
+          })
+          .catch((error) => {
+            console.log("Erro ao obter dados do Pix:", error);
+          });
+      </script>
+    <% } else { %>
+      <h1>Não tem nenhum QR Code disponivel</h1>
+    <% } %>
+  </body>
+</html>
