@@ -24,34 +24,20 @@
 
 ## Funções Forma de Pagamento
 
-- [X] Comunicação com banco em tempo real (webhook)
-
 - [X] Gerar um QR Code/pix de pagamento para adicionar creditos
 
 - [X] Atualiza os `CREDITOS` do Usuario ao o pagamento ser Efetuado via PIX.
 
-- [X] Gerar um Boleto de pagamento para adicionar creditos
-
-- [X] Atualiza os `CREDITOS` do Usuario ao o pagamento ser Efetuado via BOLETO.
 
 | Método HTTP	| Endpoint | Descrição |
 |--------|----------|----------|
 | GET |	/pagamentos/pix |	Retorna todos os pix cadastrados |
 | GET |	/pagamentos/pix/{id} |	Retorna um pix específico pelo ID |
-| GET |	/pagamentos/boletos |	Retorna todos os boletos cadastrados |
-| GET |	/pagamentos/boletos/{id} |	Retorna um boleto específico pelo ID |
 
 #
 
 ## Funções Produtos
 
-- [ ] Cadastro de Produtos
+- [X] Cadastro de Produtos
 
-- [ ] Realizar compra de Produtos com creditos
-
-- [ ] Controlar Estoque de Produtos Cadastrados
-
-
-## Testes de Integração
-
-- [X] Teste de integração rotas de Usuarios
+- [X] Realizar compra de Produtos com creditos
