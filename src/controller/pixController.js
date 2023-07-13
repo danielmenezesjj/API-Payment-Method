@@ -1,9 +1,6 @@
 const mercadopago2 = require("mercadopago");
 const userServices = require('../services/UserServices')
 const ServicesUser = new userServices();
-const path = require("path");
-const mercadopago = require('../services/mercadopago')
-const UserController = require('../controller/usersController')
 const jwt = require('jsonwebtoken')
 
 class PixController {
@@ -21,7 +18,7 @@ class PixController {
       if (status === "approved") {
         console.log("O pagamento foi aprovado. Parando a verificação.");
         const dados = { creditos: PixController.creditos };
-        const teste = await ServicesUser.updateCreditos(dados, PixController.userId);
+        const updateCreditos = await ServicesUser.updateCreditos(dados, PixController.userId);
         PixController.lastPaymentId = null;
       } else {
         console.log("O pagamento ainda não foi aprovado. Continuando a verificação.");
@@ -43,20 +40,20 @@ class PixController {
       description: "Pagamento via API",
       payment_method_id: "pix",
       payer: {
-        email: "danielmenezesdev2512@gmail.com",
-        first_name: "Daniel",
-        last_name: "Menezes De Jesus",
+        email: "",
+        first_name: "",
+        last_name: "",
         identification: {
-          type: "CPF",
-          number: "06428714507",
+          type: "",
+          number: "",
         },
         address: {
-          zip_code: "76200000",
-          street_name: "Rua mauá Q8 Lt29",
+          zip_code: "",
+          street_name: "",
           street_number: "0",
-          neighborhood: "Aguas Claras",
-          city: "Iporá",
-          federal_unit: "GO",
+          neighborhood: "A",
+          city: "",
+          federal_unit: "",
         },
       },
     };

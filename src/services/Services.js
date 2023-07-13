@@ -27,7 +27,7 @@ class Services{
         return updatedRecord;
       }
     async deleteRecords(id){
-        return database[this.model].destroy({where: {id: id,paranoid: true}});
+        return database[this.model].destroy({where: {id: id}});
     }
     
 }
