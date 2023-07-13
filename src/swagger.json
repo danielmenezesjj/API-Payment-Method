@@ -1,0 +1,146 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Minha API",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "Usuários",
+      "description": "Operações relacionadas aos usuários"
+    }
+  ],
+  "paths": {
+    "/users": {
+      "get": {
+        "summary": "Retorna todos os usuários",
+        "tags": ["Usuários"],
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          }
+        }
+      },
+      "post": {
+        "summary": "Cria um novo usuário",
+        "tags": ["Usuários"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nomeUser": {
+                    "type": "string"
+                  },
+                  "login": {
+                    "type": "string"
+                  },
+                  "senha": {
+                    "type": "string"
+                  }
+                },
+                "required": ["nomeUser", "login", "senha"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "summary": "Retorna um usuário com base no ID",
+        "tags": ["Usuários"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "ID do usuário"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          },
+          "404": {
+            "description": "Usuário não encontrado"
+          }
+        }
+      },
+      "put": {
+        "summary": "Atualiza um usuário existente",
+        "tags": ["Usuários"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "ID do usuário"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nomeUser": {
+                    "type": "string"
+                  },
+                  "login": {
+                    "type": "string"
+                  },
+                  "senha": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Exclui um usuário",
+        "tags": ["Usuários"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "ID do usuário"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          }
+          
+        }
+        
+      }
+      
+    }
+    
+  }
+  
+}

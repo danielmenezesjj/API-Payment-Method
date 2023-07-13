@@ -1,0 +1,150 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Minha API",
+      "version": "1.0.0"
+    },
+    "tags": [
+      {
+        "name": "Produtos",
+        "description": "Operações relacionadas aos produtos"
+      }
+    ],
+    "paths": {
+      "/products": {
+        "get": {
+          "summary": "Retorna todos os produtos",
+          "tags": ["Produtos"],
+          "responses": {
+            "200": {
+              "description": "Sucesso"
+            }
+          }
+        },
+        "post": {
+          "summary": "Cria um novo produto",
+          "tags": ["Produtos"],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "nomeDoProduto": {
+                      "type": "string"
+                    },
+                    "quantidade": {
+                      "type": "integer"
+                    },
+                    "dataDeValidade": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "valor": {
+                      "type": "number"
+                    }
+                  },
+                  "required": ["nomeDoProduto", "quantidade", "dataDeValidade", "valor"]
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Sucesso"
+            }
+          }
+        }
+      },
+      "/products/{id}": {
+        "get": {
+          "summary": "Retorna um produto com base no ID",
+          "tags": ["Produtos"],
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "type": "string"
+              },
+              "required": true,
+              "description": "ID do produto"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Sucesso"
+            },
+            "404": {
+              "description": "Produto não encontrado"
+            }
+          }
+        },
+        "put": {
+          "summary": "Atualiza um produto existente",
+          "tags": ["Produtos"],
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "type": "string"
+              },
+              "required": true,
+              "description": "ID do produto"
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "nomeDoProduto": {
+                      "type": "string"
+                    },
+                    "quantidade": {
+                      "type": "integer"
+                    },
+                    "dataDeValidade": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "valor": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Sucesso"
+            }
+          }
+        },
+        "delete": {
+          "summary": "Exclui um produto",
+          "tags": ["Produtos"],
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "schema": {
+                "type": "string"
+              },
+              "required": true,
+              "description": "ID do produto"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Sucesso"
+            }
+          }
+        }
+      }
+    }
+  }
+  

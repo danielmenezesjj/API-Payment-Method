@@ -1,0 +1,81 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Minha API",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "Pix",
+      "description": "Operações relacionadas ao Pix"
+    }
+  ],
+  "paths": {
+    "/gerarpix": {
+      "post": { 
+        "summary": "Gerar QR Code do Pix",
+        "tags": ["Pix"],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          }
+        }
+      }
+    },
+    "/verificarstatuspix/{id}": {
+      "get": {
+        "summary": "Verificar status do Pix por ID",
+        "tags": ["Pix"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "ID do Pix"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          },
+          "404": {
+            "description": "Pix não encontrado"
+          }
+        }
+      }
+    },
+    "/index": {
+      "get": {
+        "summary": "Visualizar QR Code do Pix",
+        "tags": ["Pix"],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Sucesso"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}
